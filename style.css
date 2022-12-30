@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-section {
+div {
   position: relative;
   height: 100vh;
   overflow: hidden;
@@ -15,20 +15,37 @@ section {
   flex-wrap: wrap;
 }
 
-section i {
+div i {
   position: relative;
   width: 60px;
   height: 60px;
   background: gray;
-  animation: color 5s linear infinite, color2 5s linear infinite;
 }
 
-section i:nth-child(5n + 1) {
-  animation: color 2s linear infinite, color2 5s linear infinite;
-  animation-delay: calc(-1s rgba(209, 28, 194, 0.936));
+div i:nth-child(5n + 1) {
+  animation: animate 2s linear infinite, animate2 5s linear infinite;
+
+  animation-delay: calc(-1s * rgba(209, 28, 194, 0.936));
 }
 
-@keyframes color {
+div i:nth-child(5n + 2) {
+  animation: animate 3s linear infinite, animate2 5s linear infinite;
+  animation-delay: calc(-1.5s * rgba(255, 255, 5, 0.936));
+}
+div i:nth-child(5n + 3) {
+  animation: animate 4s linear infinite, animate2 5s linear infinite;
+  animation-delay: calc(-2s * rgba(6, 59, 16, 0.936));
+}
+div i:nth-child(5n + 4) {
+  animation: animate 5s linear infinite, animate2 5s linear infinite;
+  animation-delay: calc(-2.5s * rgba(96, 12, 89, 0.936));
+}
+div i:nth-child(5n + 5) {
+  animation: animate 6s linear infinite, animate2 5s linear infinite;
+  animation-delay: calc(-3s * rgba(12, 23, 109, 0.936));
+}
+
+@keyframes animate {
   0%,
   20% {
     background: gray;
@@ -42,7 +59,7 @@ section i:nth-child(5n + 1) {
   }
 }
 
-@keyframes color2 {
+@keyframes animate2 {
   0% {
     filter: hue-rotate(0deg);
   }
